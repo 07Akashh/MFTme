@@ -1,0 +1,444 @@
+/* Import Poppins from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* Clash Display - Local Font Files */
+@font-face {
+  font-family: "Clash Display";
+  src: url("./assets/clash-display-font-1766826111-0/ClashDisplay-Extralight.otf")
+    format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("./assets/clash-display-font-1766826111-0/ClashDisplay-Light.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("./assets/clash-display-font-1766826111-0/ClashDisplay-Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("./assets/clash-display-font-1766826111-0/ClashDisplay-Medium.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("./assets/clash-display-font-1766826111-0/ClashDisplay-Semibold.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("./assets/clash-display-font-1766826111-0/ClashDisplay-Bold.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global CSS Variables - Exact Figma Colors */
+:root {
+  /* Primary Colors from Figma */
+  --color-background: #0d0b0c;
+  --color-gradient-start: #dd24e1;
+  --color-gradient-end: #5117f4;
+  --color-pink: #dd24e1;
+  --color-purple: #5117f4;
+
+  /* Text Colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #cccccc;
+  --color-text-muted: #d7d7d7;
+
+  /* Surface Colors */
+  --color-surface-glass: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.32) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  --color-footer-glass: linear-gradient(
+    92.13deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.075) 100%
+  );
+}
+
+/* Base Styles */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Clash Display", sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Clash Display", sans-serif;
+  }
+}
+
+/* Utility Classes */
+@layer components {
+  /* Gradient Text */
+  .gradient-text {
+    background: linear-gradient(
+      152.64deg,
+      var(--color-gradient-start) 0%,
+      var(--color-gradient-end) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Gradient Background */
+  .gradient-bg {
+    background: linear-gradient(
+      152.64deg,
+      var(--color-gradient-start) 0%,
+      var(--color-gradient-end) 100%
+    );
+  }
+
+  /* Glow Effects - Exact Figma Blur */
+  .glow-blur-130 {
+    filter: blur(130px);
+  }
+
+  .glow-blur-225 {
+    filter: blur(225px);
+  }
+
+  /* Glass Morphism */
+  .glass-card {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.32) 0%,
+      rgba(255, 255, 255, 0.2) 100%
+    );
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+  }
+
+  .glass-footer {
+    background: linear-gradient(
+      92.13deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.075) 100%
+    );
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+  }
+
+  /* Primary Button */
+  .btn-primary {
+    background: linear-gradient(
+      152.64deg,
+      var(--color-gradient-start) 0%,
+      var(--color-gradient-end) 100%
+    );
+    border-radius: 10px;
+    padding: 15px 24px;
+    font-family: "Clash Display", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 125%;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(221, 36, 225, 0.4);
+  }
+
+  /* White Button */
+  .btn-white {
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 15px 24px;
+    font-family: "Clash Display", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.2px;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .btn-white:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+  }
+
+  /* Card Styles */
+  .nft-card {
+    background: #d9d9d9;
+    /* border-radius: 20px; */
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .nft-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(222, 36, 225, 0.229);
+  }
+
+  /* Artist Card */
+  .artist-card {
+    transition: all 0.3s ease;
+  }
+
+  .artist-card:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* Typography Classes - Exact Figma Specs */
+.heading-hero {
+  font-family: "Clash Display", sans-serif;
+  font-weight: 600;
+  font-size: 72px;
+  line-height: 125%;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+.heading-section {
+  font-family: "Clash Display", sans-serif;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 100%;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+.heading-large {
+  font-family: "Clash Display", sans-serif;
+  font-weight: 500;
+  font-size: 72px;
+  line-height: 125%;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+}
+
+.heading-medium {
+  font-family: "Clash Display", sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 125%;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+.stat-number {
+  font-family: "Clash Display", sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+}
+
+.artist-name {
+  font-family: "Clash Display", sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: 0.016em;
+  color: #ffffff;
+}
+
+.artist-name-large {
+  font-family: "Clash Display", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.body-text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.016em;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.price-text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.016em;
+  color: var(--color-pink);
+}
+
+.artwork-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0.016em;
+  color: #ffffff;
+}
+
+/* Nav Link Styles */
+.nav-link {
+  font-family: "Clash Display", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--color-pink);
+}
+
+/* Responsive Typography */
+@media (max-width: 1024px) {
+  .heading-hero {
+    font-size: 56px;
+  }
+
+  .heading-section {
+    font-size: 48px;
+  }
+
+  .heading-large {
+    font-size: 56px;
+  }
+
+  .heading-medium {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading-hero {
+    font-size: 40px;
+  }
+
+  .heading-section {
+    font-size: 36px;
+  }
+
+  .heading-large {
+    font-size: 40px;
+  }
+
+  .heading-medium {
+    font-size: 28px;
+  }
+
+  .stat-number {
+    font-size: 36px;
+  }
+
+  .artist-name {
+    font-size: 20px;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(-15deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(-15deg);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    152.64deg,
+    var(--color-gradient-start) 0%,
+    var(--color-gradient-end) 100%
+  );
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-pink);
+}
